@@ -14,5 +14,8 @@
     <Project Path="src/backend/Modules/Identity/Modules.Identity/Modules.Identity.csproj" />
   </Folder>
   <Folder Name="/src/clients/" />
+  <Folder Name="/src/clients/web/">
+    <Project Path="src/clients/web/Workly.Web/Workly.Web.csproj" />
+  </Folder>
   <Folder Name="/tests/" />
 </Solution>
