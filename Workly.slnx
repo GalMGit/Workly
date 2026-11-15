@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="compose.yaml" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/backend/" />
+  <Folder Name="/src/backend/BuildingBlocks/" />
+  <Folder Name="/src/backend/Hosts/">
+    <Project Path="src/backend/Hosts/Workly.Api/Workly.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/backend/Hosts/Workers/" />
+  <Folder Name="/src/backend/Modules/" />
+  <Folder Name="/src/backend/Modules/Identity/">
+    <Project Path="src/backend/Modules/Identity/Modules.Identity/Modules.Identity.csproj" />
+  </Folder>
+  <Folder Name="/src/clients/" />
+  <Folder Name="/tests/" />
+</Solution>

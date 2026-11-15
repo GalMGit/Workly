@@ -1,0 +1,7 @@
+﻿services:
+  workly.api:
+    image: workly.api
+    build:
+      context: .
+      dockerfile: src/backend/Hosts/Workly.Api/Dockerfile
+
