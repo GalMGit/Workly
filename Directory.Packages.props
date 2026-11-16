@@ -32,8 +32,8 @@
         <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="11.0.0" />
         <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="11.0.0" />
         <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="11.0.0" />
-        <PackageVersion Include="Serilog.AspNetCore" Version="11.0.0" />
-        <PackageVersion Include="Serilog.Settings.Configuration" Version="11.0.0" />
+        <PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />
+        <PackageVersion Include="Serilog.Settings.Configuration" Version="10.0.0" />
         <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
         <PackageVersion Include="Serilog.Sinks.OpenTelemetry" Version="4.2.0" />
         <PackageVersion Include="Microsoft.AspNetCore.Components.Gateway" Version="11.0.0" PrivateAssets="all"/>
