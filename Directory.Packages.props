@@ -1,0 +1,42 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="AWSSDK.S3" Version="3.7.414.4" />
+        <PackageVersion Include="Elastic.Clients.Elasticsearch" Version="9.5.2" />
+        <PackageVersion Include="FFMpegCore" Version="5.4.0" />
+        <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+        <PackageVersion Include="MailKit" Version="4.17.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Http" Version="2.3.12" />
+        <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="11.0.0" />
+        <PackageVersion Include="Mime-Detective" Version="25.8.1" />
+        <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.20.1" />
+        <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.20.1" />
+        <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.20.2" />
+        <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.20.2" />
+        <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.20.1" />
+        <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.7" />
+        <PackageVersion Include="StackExchange.Redis" Version="2.13.17" />
+        <PackageVersion Include="WolverineFx" Version="6.33.0" />
+        <PackageVersion Include="WolverineFx.EntityFrameworkCore" Version="6.33.0" />
+        <PackageVersion Include="WolverineFx.Postgresql" Version="6.33.0" />
+        <PackageVersion Include="WolverineFx.RabbitMQ" Version="6.33.0" />
+        <PackageVersion Include="WolverineFx.RuntimeCompilation" Version="6.33.0" />
+        <PackageVersion Include="Scalar.AspNetCore" Version="2.17.2" />
+        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="11.0.0" />
+        <PackageVersion Include="Microsoft.Extensions.Hosting" Version="11.0.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="11.0.0" />
+        <PackageVersion Include="BCrypt.Net-Next" Version="4.1.0" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="11.0.0" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="11.0.0" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="11.0.0" />
+        <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="11.0.0" />
+        <PackageVersion Include="Serilog.AspNetCore" Version="11.0.0" />
+        <PackageVersion Include="Serilog.Settings.Configuration" Version="11.0.0" />
+        <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
+        <PackageVersion Include="Serilog.Sinks.OpenTelemetry" Version="4.2.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Gateway" Version="11.0.0" PrivateAssets="all"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="11.0.0"/>
+    </ItemGroup>
+</Project>
