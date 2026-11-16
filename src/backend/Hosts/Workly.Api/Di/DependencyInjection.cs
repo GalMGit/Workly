@@ -1,4 +1,5 @@
 using Microsoft.OpenApi;
+using Modules.Identity.Di;
 
 namespace Workly.Api.Di;
 
@@ -42,6 +43,9 @@ public static class DependencyInjection
                     return Task.CompletedTask;
                 });
             });
+            
+            services.AddIdentityModule(configuration);
         }
+        
     }
 }

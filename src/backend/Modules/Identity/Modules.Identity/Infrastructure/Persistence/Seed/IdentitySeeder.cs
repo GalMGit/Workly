@@ -168,7 +168,7 @@ public static class IdentitySeeder
         {
             admin = new User
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.CreateVersion7(),
                 Username = adminOptions.Username,
                 Email = adminOptions.Email,
                 PasswordHash = passwordHasher.GenerateHash(

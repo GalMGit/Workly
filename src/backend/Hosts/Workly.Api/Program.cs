@@ -6,6 +6,7 @@ using Wolverine.Persistence.Durability;
 using Wolverine.Postgresql;
 using Wolverine.RabbitMQ;
 using Modules.Identity.Di;
+using Workly.Api.Di;
 using Scalar.AspNetCore;
 using Workly.Shared.Endpoint;
 
@@ -39,8 +40,7 @@ builder.Host.UseWolverine(opt =>
     opt.AddIdentityMessaging(builder.Configuration);
 });
 
-builder.Services.AddOpenApi();
-builder.Services.AddIdentityModule(builder.Configuration);
+builder.Services.AddConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
