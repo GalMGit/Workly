@@ -39,7 +39,7 @@ public static class DependencyInjection
             options.PersistMessagesWithPostgresql(
                     configuration.GetConnectionString(
                         "IdentityDatabase")!,
-                    role: MessageStoreRole.Ancillary)
+                    role: MessageStoreRole.Main)
                 .Enroll<IdentityDbContext>();
         }
     }
@@ -144,8 +144,7 @@ public static class DependencyInjection
                         NameClaimType = ClaimTypes.NameIdentifier,
                         RoleClaimType = ClaimTypes.Role,
                     };
-
-                    // "sub" and "email" are mapped to their ClaimTypes equivalents.
+                    
                     o.MapInboundClaims = true;
 
                     o.Events = new JwtBearerEvents

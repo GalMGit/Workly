@@ -29,10 +29,10 @@ builder.Host.UseWolverine(opt =>
     opt.Policies.UseDurableOutboxOnAllSendingEndpoints();
     opt.Policies.UseDurableInboxOnAllListeners();
     
-    opt.PersistMessagesWithPostgresql(
-        builder.Configuration.GetConnectionString(
-            "WolverineDatabase")!,
-        role: MessageStoreRole.Main);
+    // opt.PersistMessagesWithPostgresql(
+    //     builder.Configuration.GetConnectionString(
+    //         "WolverineDatabase")!,
+    //     role: MessageStoreRole.Main);
     
     opt.ServiceLocationPolicy = ServiceLocationPolicy.AlwaysAllowed;
     
@@ -55,7 +55,7 @@ if (app.Environment.IsDevelopment())
     
     app.MapScalarApiReference("/docs",options =>
     {
-        options.WithTitle("EShop API")
+        options.WithTitle("Workly API")
             .AddPreferredSecuritySchemes("Bearer")
             .AddHttpAuthentication("Bearer", auth =>
             {
@@ -67,7 +67,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
-
-
 
 app.Run();
