@@ -4,7 +4,9 @@
   </Folder>
   <Folder Name="/src/" />
   <Folder Name="/src/backend/" />
-  <Folder Name="/src/backend/BuildingBlocks/" />
+  <Folder Name="/src/backend/BuildingBlocks/">
+    <Project Path="src/backend/BuildingBlocks/Workly.Shared/Workly.Shared.csproj" />
+  </Folder>
   <Folder Name="/src/backend/Hosts/">
     <Project Path="src/backend/Hosts/Workly.Api/Workly.Api.csproj" />
   </Folder>
