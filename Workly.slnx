@@ -19,6 +19,10 @@
     <Project Path="src/backend/Modules/Identity/Modules.Identity.Contracts/Modules.Identity.Contracts.csproj" />
     <Project Path="src/backend/Modules/Identity/Modules.Identity/Modules.Identity.csproj" />
   </Folder>
+  <Folder Name="/src/backend/Modules/Profiles/">
+    <Project Path="src/backend/Modules/Profiles/Modules.Profiles.Contracts/Modules.Profiles.Contracts.csproj" />
+    <Project Path="src/backend/Modules/Profiles/Modules.Profiles/Modules.Profiles.csproj" />
+  </Folder>
   <Folder Name="/src/clients/" />
   <Folder Name="/src/clients/web/">
     <Project Path="src/clients/web/Workly.Web/Workly.Web.csproj" />

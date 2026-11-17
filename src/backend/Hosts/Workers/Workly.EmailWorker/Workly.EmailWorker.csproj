@@ -8,6 +8,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <EmbeddedResource Include="Email/Templates/*.html"/>
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="MailKit" />
         <PackageReference Include="Microsoft.Extensions.Hosting"/>
         <PackageReference Include="WolverineFx.RabbitMQ" />
