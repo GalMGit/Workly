@@ -15,6 +15,9 @@
     <Project Path="src/backend/Hosts/Workers/Workly.EmailWorker/Workly.EmailWorker.csproj" />
   </Folder>
   <Folder Name="/src/backend/Modules/" />
+  <Folder Name="/src/backend/Modules/Companies/">
+    <Project Path="src/backend/Modules/Companies/Modules.Companies/Modules.Companies.csproj" />
+  </Folder>
   <Folder Name="/src/backend/Modules/Identity/">
     <Project Path="src/backend/Modules/Identity/Modules.Identity.Contracts/Modules.Identity.Contracts.csproj" />
     <Project Path="src/backend/Modules/Identity/Modules.Identity/Modules.Identity.csproj" />

@@ -47,6 +47,7 @@ builder.Services.AddConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
+await app.Services.InitializeMessagingAsync();
 await app.Services.InitializeIdentityAsync();
 await app.Services.InitializeProfilesAsync();
 
