@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Modules.Identity.Application.Abstractions.Auth;
 using Modules.Identity.Application.Abstractions.Cache;
+using Modules.Identity.Contracts.Events;
 using Modules.Identity.Infrastructure.Auth;
 using Modules.Identity.Infrastructure.Cache;
 using Modules.Identity.Infrastructure.Persistence;
@@ -41,6 +42,9 @@ public static class DependencyInjection
                         "IdentityDatabase")!,
                     role: MessageStoreRole.Main)
                 .Enroll<IdentityDbContext>();
+
+            options.PublishMessage<UserRegistrationStarted>()
+                .ToRabbitQueue("workly-email");
         }
     }
 

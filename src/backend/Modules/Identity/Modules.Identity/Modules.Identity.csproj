@@ -22,13 +22,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Errors\" />
+      <Folder Include="Features\Login\" />
       <Folder Include="Infrastructure\Persistence\Configs\" />
       <Folder Include="Infrastructure\Persistence\Migrations\" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\BuildingBlocks\Workly.Shared\Workly.Shared.csproj" />
+      <ProjectReference Include="..\Modules.Identity.Contracts\Modules.Identity.Contracts.csproj" />
     </ItemGroup>
 
 </Project>

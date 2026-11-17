@@ -1,3 +1,5 @@
 namespace Modules.Identity.Contracts.Events;
 
-public sealed record UserCreatedEvent(Guid UserId);
+public sealed record UserCreatedEvent(
+    Guid UserId,
+    string Username);
