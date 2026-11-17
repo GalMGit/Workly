@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Modules.Identity.Application;
 using Modules.Identity.Application.Abstractions.Auth;
 using Modules.Identity.Application.Abstractions.Cache;
 using Modules.Identity.Contracts.Events;
@@ -25,8 +26,6 @@ using Workly.Shared.Endpoint;
 
 namespace Modules.Identity.Di;
 
-public sealed class IdentityModuleMarker;
-
 public static class DependencyInjection
 {
     extension(WolverineOptions options)
@@ -40,11 +39,14 @@ public static class DependencyInjection
             options.PersistMessagesWithPostgresql(
                     configuration.GetConnectionString(
                         "IdentityDatabase")!,
-                    role: MessageStoreRole.Main)
+                    role: MessageStoreRole.Ancillary)
                 .Enroll<IdentityDbContext>();
 
             options.PublishMessage<UserRegistrationStarted>()
                 .ToRabbitQueue("workly-email");
+            
+            options.PublishMessage<UserCreated>()
+                .ToRabbitQueue("workly-profiles");
         }
     }
 

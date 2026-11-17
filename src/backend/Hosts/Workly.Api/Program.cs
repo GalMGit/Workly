@@ -6,6 +6,7 @@ using Wolverine.Persistence.Durability;
 using Wolverine.Postgresql;
 using Wolverine.RabbitMQ;
 using Modules.Identity.Di;
+using Modules.Profiles.Di;
 using Workly.Api.Di;
 using Scalar.AspNetCore;
 using Workly.Shared.Endpoint;
@@ -23,21 +24,23 @@ builder.Host.UseSerilog((
 builder.Host.UseWolverine(opt =>
 {
     opt.UseRabbitMq(
-        builder.Configuration.GetConnectionString(
-            "RabbitMq")!);
+            builder.Configuration.GetConnectionString(
+                "RabbitMq")!)
+        .AutoProvision();
     
     opt.UseEntityFrameworkCoreTransactions();
     opt.Policies.UseDurableOutboxOnAllSendingEndpoints();
     opt.Policies.UseDurableInboxOnAllListeners();
     
-    // opt.PersistMessagesWithPostgresql(
-    //     builder.Configuration.GetConnectionString(
-    //         "WolverineDatabase")!,
-    //     role: MessageStoreRole.Main);
+    opt.PersistMessagesWithPostgresql(
+        builder.Configuration.GetConnectionString(
+            "MessagingDatabase")!,
+        role: MessageStoreRole.Main);
     
     opt.ServiceLocationPolicy = ServiceLocationPolicy.AlwaysAllowed;
     
     opt.AddIdentityMessaging(builder.Configuration);
+    opt.AddProfilesMessaging(builder.Configuration);
 });
 
 builder.Services.AddConfiguration(builder.Configuration);
@@ -45,6 +48,7 @@ builder.Services.AddConfiguration(builder.Configuration);
 var app = builder.Build();
 
 await app.Services.InitializeIdentityAsync();
+await app.Services.InitializeProfilesAsync();
 
 var api = app.MapGroup("/api");
 app.MapEndpoints(api);

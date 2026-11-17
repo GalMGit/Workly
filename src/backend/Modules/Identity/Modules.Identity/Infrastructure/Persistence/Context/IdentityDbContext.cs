@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Modules.Identity.Di;
+using Modules.Identity.Application;
 using Modules.Identity.Domain;
 
 namespace Modules.Identity.Infrastructure.Persistence.Context;

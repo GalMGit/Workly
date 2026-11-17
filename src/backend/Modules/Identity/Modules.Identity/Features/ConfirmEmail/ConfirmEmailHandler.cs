@@ -74,7 +74,7 @@ public sealed class ConfirmEmailHandler(
             cacheKey, ct);
 
         await bus.PublishAsync(
-            new UserCreatedEvent(
+            new UserCreated(
                 user.Id,
                 tempUser.Username));
         

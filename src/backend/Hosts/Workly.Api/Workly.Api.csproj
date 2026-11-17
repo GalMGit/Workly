@@ -27,6 +27,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Modules\Identity\Modules.Identity\Modules.Identity.csproj" />
+      <ProjectReference Include="..\..\Modules\Profiles\Modules.Profiles\Modules.Profiles.csproj" />
     </ItemGroup>
 
 </Project>
