@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-Workly.EmailWorker-a744e0d0-298f-40bc-988d-fab894b5e7a9</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MailKit" />
+        <PackageReference Include="Microsoft.Extensions.Hosting"/>
+        <PackageReference Include="WolverineFx.RabbitMQ" />
+        <PackageReference Include="WolverineFx"/>
+        <PackageReference Include="WolverineFx.RuntimeCompilation"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Modules\Identity\Modules.Identity.Contracts\Modules.Identity.Contracts.csproj" />
+    </ItemGroup>
+</Project>
