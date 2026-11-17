@@ -16,6 +16,7 @@
   </Folder>
   <Folder Name="/src/backend/Modules/" />
   <Folder Name="/src/backend/Modules/Companies/">
+    <Project Path="src/backend/Modules/Companies/Modules.Companies.Contracts/Modules.Companies.Contracts.csproj" />
     <Project Path="src/backend/Modules/Companies/Modules.Companies/Modules.Companies.csproj" />
   </Folder>
   <Folder Name="/src/backend/Modules/Identity/">
