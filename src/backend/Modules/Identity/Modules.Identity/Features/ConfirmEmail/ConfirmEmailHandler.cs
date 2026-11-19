@@ -21,7 +21,9 @@ public sealed class ConfirmEmailHandler(
         ConfirmEmailCommand command,
         CancellationToken ct)
     {
-        var email = command.Request.Email.Trim().ToLowerInvariant();
+        var email = command.Request.Email
+            .Trim()
+            .ToLowerInvariant();
         
         var cacheKey = $"temp_user:{email}";
         
@@ -40,8 +42,13 @@ public sealed class ConfirmEmailHandler(
             return Result.Failure(
                 UserErrors.ConfirmationCodeExpired);
 
-        var normalizedEmail = tempUser.Email.Trim().ToLowerInvariant();
-        var normalizedUsername = tempUser.Username.Trim().ToLowerInvariant();
+        var normalizedEmail = tempUser.Email
+            .Trim()
+            .ToLowerInvariant();
+        
+        var normalizedUsername = tempUser.Username
+            .Trim()
+            .ToLowerInvariant();
 
         if (await context.Users.AnyAsync(
                 x => x.Email.ToLower() == normalizedEmail, ct))

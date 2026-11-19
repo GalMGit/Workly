@@ -4,11 +4,10 @@ using Modules.Profiles.Domain;
 
 namespace Modules.Profiles.Infrastructure.Persistence.Context;
 
-public sealed class ProfilesDbContext : DbContext
+public sealed class ProfilesDbContext(
+    DbContextOptions<ProfilesDbContext> options)
+    : DbContext(options)
 {
-    public ProfilesDbContext(DbContextOptions<ProfilesDbContext> options)
-        : base(options) {}
-
     public DbSet<Profile> Profiles => Set<Profile>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

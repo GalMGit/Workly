@@ -4,11 +4,10 @@ using Modules.Identity.Domain;
 
 namespace Modules.Identity.Infrastructure.Persistence.Context;
 
-public sealed class IdentityDbContext : DbContext
+public sealed class IdentityDbContext(
+    DbContextOptions<IdentityDbContext> options) 
+    : DbContext(options)
 {
-    public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
-        : base(options) {}
-
     public DbSet<User> Users => Set<User>();
     public DbSet<Role> Roles => Set<Role>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();

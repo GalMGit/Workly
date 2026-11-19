@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Modules.Identity.Application.Tags;
 using Wolverine;
 using Workly.Shared.Endpoint;
 using Workly.Shared.ResultTools;

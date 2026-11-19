@@ -4,25 +4,20 @@ using Modules.Identity.Application.Abstractions.Cache;
 
 namespace Modules.Identity.Infrastructure.Cache;
 
-public class RedisCacheService : ICacheService
+public class RedisCacheService(
+    IDistributedCache cache) 
+    : ICacheService
 {
-    private readonly IDistributedCache _cache;
-    private readonly DistributedCacheEntryOptions _defaultOptions;
-
-    public RedisCacheService(IDistributedCache cache)
+    private readonly DistributedCacheEntryOptions _defaultOptions = new()
     {
-        _cache = cache;
-        _defaultOptions = new DistributedCacheEntryOptions
-        {
-            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(15)
-        };
-    }
+        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(15)
+    };
 
     public async Task<bool> ExistsAsync(
         string key, 
         CancellationToken ct = default)
     {
-        var data = await _cache.GetStringAsync(key, ct);
+        var data = await cache.GetStringAsync(key, ct);
         return !string.IsNullOrEmpty(data);
     }
 
@@ -30,18 +25,17 @@ public class RedisCacheService : ICacheService
         string key, 
         CancellationToken ct = default)
     {
-        var data = await _cache.GetStringAsync(key, ct);
+        var data = await cache.GetStringAsync(key, ct);
 
-        if (string.IsNullOrEmpty(data))
-            return default;
-
-        return JsonSerializer.Deserialize<T>(data);
+        return string.IsNullOrEmpty(data)
+            ? default 
+            : JsonSerializer.Deserialize<T>(data);
     }
 
     public async Task RemoveAsync(
         string key, 
         CancellationToken ct = default)
-        => await _cache.RemoveAsync(key, ct);
+        => await cache.RemoveAsync(key, ct);
     
 
     public async Task SetAsync<T>(
@@ -57,7 +51,7 @@ public class RedisCacheService : ICacheService
         };
 
         var jsonData = JsonSerializer.Serialize(value);
-        await _cache.SetStringAsync(
+        await cache.SetStringAsync(
             key, 
             jsonData, 
             options, ct);

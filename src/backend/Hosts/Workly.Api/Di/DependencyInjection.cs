@@ -56,7 +56,6 @@ public static class DependencyInjection
                     configuration.GetConnectionString(
                         "MessagingDatabase")));
         }
-
     }
 
     extension(IServiceProvider services)
@@ -70,6 +69,5 @@ public static class DependencyInjection
 
             await db.Database.EnsureCreatedAsync();
         }
-        
     }
 }

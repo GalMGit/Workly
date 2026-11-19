@@ -1,4 +1,4 @@
-namespace Workly.Shared.Endpoint;
+namespace Modules.Identity.Application.Tags;
 
 public static class Tags
 {
