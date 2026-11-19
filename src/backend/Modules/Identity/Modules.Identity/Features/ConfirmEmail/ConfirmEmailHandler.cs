@@ -4,6 +4,7 @@ using Modules.Identity.Application.Errors;
 using Modules.Identity.Application.Names;
 using Modules.Identity.Contracts.Events;
 using Modules.Identity.Domain;
+using Modules.Identity.Domain.Models;
 using Modules.Identity.Infrastructure.Persistence.Context;
 using Wolverine;
 using Wolverine.Attributes;

@@ -1,4 +1,5 @@
 using Modules.Identity.Domain;
+using Modules.Identity.Domain.Models;
 
 namespace Modules.Identity.Application.Abstractions.Auth;
 

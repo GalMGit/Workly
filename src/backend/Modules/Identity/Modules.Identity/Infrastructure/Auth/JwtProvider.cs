@@ -7,6 +7,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Modules.Identity.Application.Abstractions.Auth;
 using Modules.Identity.Domain;
+using Modules.Identity.Domain.Models;
 
 namespace Modules.Identity.Infrastructure.Auth;
 

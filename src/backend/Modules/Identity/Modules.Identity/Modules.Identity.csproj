@@ -22,7 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Login\" />
       <Folder Include="Infrastructure\Persistence\Configs\" />
       <Folder Include="Infrastructure\Persistence\Migrations\" />
     </ItemGroup>

@@ -1,7 +1,9 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi;
 using Modules.Identity.Di;
+using Modules.Companies.Di;
 using Modules.Profiles.Di;
 using Workly.Api.Infrastructure.Messaging;
 
@@ -14,6 +16,12 @@ public static class DependencyInjection
         public void AddConfiguration(
             IConfiguration configuration)
         {
+            services.ConfigureHttpJsonOptions(options =>
+            {
+                options.SerializerOptions.Converters.Add(
+                    new JsonStringEnumConverter());
+            });
+
             services.AddOpenApi(options =>
             {
                 options.AddDocumentTransformer((
@@ -50,6 +58,7 @@ public static class DependencyInjection
             
             services.AddIdentityModule(configuration);
             services.AddProfilesModule(configuration);
+            services.AddCompaniesModule(configuration);
 
             services.AddDbContext<MessagingDbContext>(options =>
                 options.UseNpgsql(

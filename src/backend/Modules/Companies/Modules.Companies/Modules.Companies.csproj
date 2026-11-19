@@ -20,8 +20,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Errors\" />
-      <Folder Include="Domain\" />
+      <Folder Include="Application\Dtos\" />
+      <Folder Include="Features\" />
       <Folder Include="Infrastructure\Persistence\Configs\" />
       <Folder Include="Infrastructure\Persistence\Migrations\" />
     </ItemGroup>

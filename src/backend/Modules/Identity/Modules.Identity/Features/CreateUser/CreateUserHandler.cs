@@ -5,6 +5,7 @@ using Modules.Identity.Application.Abstractions.Cache;
 using Modules.Identity.Application.Errors;
 using Modules.Identity.Contracts.Events;
 using Modules.Identity.Domain;
+using Modules.Identity.Domain.Models;
 using Modules.Identity.Infrastructure.Persistence.Context;
 using Wolverine;
 using Workly.Shared.ResultTools;

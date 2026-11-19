@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Modules.Identity.Application;
 using Modules.Identity.Domain;
+using Modules.Identity.Domain.Models;
 
 namespace Modules.Identity.Infrastructure.Persistence.Context;
 

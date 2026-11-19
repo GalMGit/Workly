@@ -6,6 +6,7 @@ using Wolverine.Persistence.Durability;
 using Wolverine.Postgresql;
 using Wolverine.RabbitMQ;
 using Modules.Identity.Di;
+using Modules.Companies.Di;
 using Modules.Profiles.Di;
 using Workly.Api.Di;
 using Scalar.AspNetCore;
@@ -41,6 +42,7 @@ builder.Host.UseWolverine(opt =>
     
     opt.AddIdentityMessaging(builder.Configuration);
     opt.AddProfilesMessaging(builder.Configuration);
+    opt.AddCompaniesMessaging(builder.Configuration);
 });
 
 builder.Services.AddConfiguration(builder.Configuration);
@@ -50,6 +52,7 @@ var app = builder.Build();
 await app.Services.InitializeMessagingAsync();
 await app.Services.InitializeIdentityAsync();
 await app.Services.InitializeProfilesAsync();
+await app.Services.InitializeCompaniesAsync();
 
 var api = app.MapGroup("/api");
 app.MapEndpoints(api);

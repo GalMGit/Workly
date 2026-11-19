@@ -1,4 +1,4 @@
-namespace Modules.Identity.Domain;
+namespace Modules.Identity.Domain.Models;
 
 public sealed class RefreshToken
 {

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Modules.Identity.Application.Abstractions.Auth;
 using Modules.Identity.Domain;
+using Modules.Identity.Domain.Models;
 using Modules.Identity.Infrastructure.Persistence.Context;
 
 namespace Modules.Identity.Infrastructure.Persistence.Seed;
